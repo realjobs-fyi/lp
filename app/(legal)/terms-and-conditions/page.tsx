@@ -123,7 +123,7 @@ export default function TermsAndConditionsPage() {
             <p>
               Résumé outputs and job-quality insights are generated
               programmatically and may not always be accurate. Real Jobs
-              provides all output <strong>"as is"</strong> with no guarantees of
+              provides all output <strong>&quot;as is&quot;</strong> with no guarantees of
               completeness, correctness, or suitability for specific purposes.
             </p>
           </div>

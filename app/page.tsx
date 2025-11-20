@@ -1,8 +1,6 @@
 import Image from "next/image";
 import {
-  Menu,
   Chromium,
-  Languages,
   ChevronRight,
   FlaskConical,
   CirclePlay,
@@ -38,11 +36,11 @@ export default function Home() {
           <Image src="/icon.svg" width={32} height={32} alt="Real Jobs Icon" />
         </div>
         <div className="flex items-center justify-center gap-3">
-          <button className="bg-white text-black px-5 py-2.5 rounded-4xl font-semibold max-md:hidden">
+          <button className="bg-white text-black px-5 py-2.5 rounded-4xl font-semibold max-md:hidden cursor-pointer hover:bg-gray-200 transition-colors duration-300">
             Contact
           </button>
 
-          <button className="bg-black text-white px-5 py-2.5 rounded-4xl font-semibold">
+          <button className="bg-black text-white px-5 py-2.5 rounded-4xl font-semibold cursor-pointer hover:opacity-80 transition-opacity duration-300">
             Get Started
           </button>
         </div>
@@ -110,7 +108,7 @@ export default function Home() {
                 <a href="">
                   <button className="flex items-center justify-center gap-3 bg-[#304fff] border-2 border-[#304fff] text-white font-semibold px-6 py-3 rounded-4xl cursor-pointer hover:opacity-80 transition-opacity duration-300">
                     <Chromium />
-                    <span className="max-md:text-sm">Add Real Jobs to Chrome — It's Free!</span>
+                    <span className="max-md:text-sm">Add Real Jobs to Chrome — It&apos;s Free!</span>
                   </button>
                 </a>
                 <p className="absolute top-[calc(100%+1px)] text-[10px] mt-1.5 text-gray-500">
