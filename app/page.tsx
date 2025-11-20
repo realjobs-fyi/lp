@@ -36,9 +36,11 @@ export default function Home() {
           <Image src="/icon.svg" width={32} height={32} alt="Real Jobs Icon" />
         </div>
         <div className="flex items-center justify-center gap-3">
+          <a href="mailto:hello@realjobs.fyi">
           <button className="bg-white text-black px-5 py-2.5 rounded-4xl font-semibold max-md:hidden cursor-pointer hover:bg-gray-200 transition-colors duration-300">
             Contact
           </button>
+          </a>
 
           <button className="bg-black text-white px-5 py-2.5 rounded-4xl font-semibold cursor-pointer hover:opacity-80 transition-opacity duration-300">
             Get Started

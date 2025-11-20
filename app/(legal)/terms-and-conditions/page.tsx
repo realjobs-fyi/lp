@@ -193,7 +193,7 @@ export default function TermsAndConditionsPage() {
       </div>
 
       <div className="absolute bottom-2 right-0 left-0 mx-auto w-full flex items-center justify-center px-4">
-        <div className="flex flex-col items-start justify-center max-w-lg w-full gap-2">
+        <div className="flex flex-col items-start justify-center max-w-xl w-full gap-2">
           <span className="w-full h-px bg-gray-100"></span>
           <p className="text-xs py-2 text-gray-500 font-medium">
             © 2025 <Link className="underline" href="/">Real Jobs</Link>
