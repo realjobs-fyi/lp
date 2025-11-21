@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
   Chromium,
@@ -5,33 +7,45 @@ import {
   FlaskConical,
   CirclePlay,
 } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setIsVisible(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
+
   return (
     <div className="relative flex flex-col min-h-screen items-center justify-between pt-8 pb-4 max-md:px-4">
+      
       <Image
-        className="absolute top-56 left-36 -z-10 max-md:hidden"
+        className={`absolute top-56 left-36 -z-10 max-md:hidden ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"} transition-all duration-700 delay-500`}
         src="/cloud.png"
         width={144}
         height={144}
         alt="Cloud Icon"
       />
+
       <Image
-        className="absolute bottom-72 right-44 z-10 max-md:hidden"
-        src="/cloud.png"
-        width={144}
-        height={144}
-        alt="Cloud Icon"
-      />
-      <Image
-        className="absolute bottom-32 left-64 z-10 max-md:hidden"
+        className={`absolute bottom-32 left-64 z-10 max-md:hidden ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"} transition-all duration-700 delay-700`}
         src="/wind.webp"
         width={100}
         height={100}
-        alt="Cloud Icon"
+        alt="Wind Icon"
       />
 
-      <nav className="flex items-center justify-between max-w-4xl w-full">
+      <Image
+        className={`absolute bottom-72 right-44 z-10 max-md:hidden ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"} transition-all duration-700 delay-900`}
+        src="/cloud.png"
+        width={144}
+        height={144}
+        alt="Cloud Icon"
+      />
+      
+
+      <nav className={`flex items-center justify-between max-w-4xl w-full ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"} transition-all duration-700 delay-300`}>
         <div className="flex gap-3 items-end justify-center">
           <Image src="/icon.svg" width={32} height={32} alt="Real Jobs Icon" />
         </div>
@@ -49,7 +63,7 @@ export default function Home() {
       </nav>
 
       {/* Main */}
-      <main className="flex flex-col items-center justify-center gap-3 max-w-4xl w-full z-10">
+      <main className={`flex flex-col items-center justify-center gap-3 max-w-4xl w-full z-10 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"} transition-all duration-700`}>
         <div className="flex flex-col items-center justify-center gap-10 max-md:gap-6">
           <div className="mb-2">
             <button className="flex items-center justify-center gap-4 pl-4 pr-3 py-1.5 rounded-4xl bg-gray-100 cursor-pointer hover:shadow-lg/5 transition-shadow duration-300">
