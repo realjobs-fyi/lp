@@ -4,8 +4,8 @@ import Image from "next/image";
 import {
   Chromium,
   ChevronRight,
-  FlaskConical,
   CirclePlay,
+  Hourglass
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -66,14 +66,14 @@ export default function Home() {
       <main className={`flex flex-col items-center justify-center gap-3 max-w-4xl w-full z-10 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"} transition-all duration-700`}>
         <div className="flex flex-col items-center justify-center gap-10 max-md:gap-6">
           <div className="mb-2">
-            <button className="flex items-center justify-center gap-4 pl-4 pr-3 py-1.5 rounded-4xl bg-gray-100 cursor-pointer hover:shadow-lg/5 transition-shadow duration-300">
-              <FlaskConical
+            <button className="flex items-center justify-center gap-3 pl-4 pr-3 py-1.5 rounded-4xl bg-gray-100 cursor-pointer hover:shadow-lg/5 transition-shadow duration-300">
+              <Hourglass
                 width={16}
                 height={16}
                 strokeWidth={2}
                 className="text-black"
               />
-              <p className="text-sm">Become a tester</p>
+              <p className="text-sm">Land more Interviews</p>
               <div className="flex justify-center items-center bg-black p-0.5 rounded-full">
                 <ChevronRight
                   width={14}
