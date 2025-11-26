@@ -30,5 +30,17 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: "https://realjobs.fyi/billing/success",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://realjobs.fyi/billing/cancel",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }
