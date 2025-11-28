@@ -18,7 +18,7 @@ export default function CancelPage() {
 
     useEffect(() => {
         if (countdown === 0) {
-            window.location.href = "chrome-extension://mneifciejdgmjohlmhbholjndaebencc/src/options/index.html#profile";
+            window.location.href = `chrome-extension://${process.env.NEXT_PUBLIC_EXTENSION_ID}/src/options/index.html#profile`;
         }
     }, [countdown]);
 
@@ -38,7 +38,7 @@ export default function CancelPage() {
       </div>
       <Link
       className="text-xs text-gray-600 hover:text-black underline transition-colors duration-200 cursor-pointer"
-       href="chrome-extension://mneifciejdgmjohlmhbholjndaebencc/src/options/index.html#profile">Open extension now</Link>
+       href={`chrome-extension://${process.env.NEXT_PUBLIC_EXTENSION_ID}/src/options/index.html#profile`}>Open extension now</Link>
     </div>
   );
 }
