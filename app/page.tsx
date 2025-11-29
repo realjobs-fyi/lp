@@ -87,7 +87,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative flex flex-col min-h-screen items-center justify-between pt-8 pb-4 max-md:px-4">
+    <div className="relative flex flex-col min-h-screen items-center justify-between pt-8 pb-4 max-md:px-8">
       <Image
         className={`absolute top-56 left-36 -z-10 max-md:hidden ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
@@ -119,7 +119,7 @@ export default function Home() {
       />
 
       <nav
-        className={`flex items-center justify-between max-w-4xl w-full px-6 ${
+        className={`flex items-center justify-between max-w-4xl w-full ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
         } transition-all duration-700 delay-300`}
       >
@@ -142,7 +142,7 @@ export default function Home() {
 
       {/* Main */}
       <main
-        className={`flex flex-col items-center justify-center gap-3 max-w-4xl w-full z-10 px-6 ${
+        className={`flex flex-col items-center justify-center gap-3 max-w-4xl w-full z-10 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
         } transition-all duration-700`}
       >
@@ -200,13 +200,13 @@ export default function Home() {
             after using our tool.*
           </p>
 
-          <div className="flex flex-col items-center justify-center">
-            <div className="flex space-x-2 max-md:flex-col justify-center items-center max-md:gap-8">
-              <div className="relative flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center max-md:w-full">
+            <div className="flex space-x-2 max-md:flex-col justify-center items-center max-md:gap-8 max-md:w-full">
+              <div className="relative flex flex-col items-center justify-center max-md:w-full">
                 <form
                   onSubmit={handleSubmit}
                   method="post"
-                  className="relative flex max-md:flex-col items-center justify-center gap-2"
+                  className="relative flex max-md:flex-col items-center justify-center gap-2 max-md:w-full"
                 >
                   <input
                     autoComplete="off"
@@ -215,7 +215,7 @@ export default function Home() {
                     placeholder="Enter your email"
                     required
                     ref={emailRef}
-                    className="group w-96 px-6 py-3 rounded-4xl border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:border-transparent transition-all duration-200"
+                    className="group w-96 max-md:w-full px-6 py-3 rounded-4xl border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:border-transparent transition-all duration-200"
                   />
                   <SubmitButton isSubmitting={isSubmitting} />
 
