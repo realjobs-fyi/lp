@@ -150,7 +150,7 @@ export default function ReportPage() {
           
           if (Array.isArray(errors)) {
             // Pydantic validation errors format
-            errorMessages = errors.map((err: any) => {
+            errorMessages = errors.map((err) => {
               const field = err.loc?.join(".") || "field";
               const msg = err.msg || "Invalid value";
               return `${field}: ${msg}`;

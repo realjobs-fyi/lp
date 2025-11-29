@@ -45,5 +45,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: error.message }, { status: 400 });
   }
 
+  // TODO: send email to the user to confirm their email and ask if they want to join the beta testing program
+
   return NextResponse.json({ data }, { status: 201 });
 }
