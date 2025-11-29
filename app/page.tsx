@@ -119,7 +119,7 @@ export default function Home() {
       />
 
       <nav
-        className={`flex items-center justify-between max-w-4xl w-full ${
+        className={`flex items-center justify-between max-w-4xl w-full px-6 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
         } transition-all duration-700 delay-300`}
       >
@@ -134,7 +134,7 @@ export default function Home() {
             </button>
           </a>
 
-          <button onClick={() => emailRef.current?.focus()} className="bg-black text-white px-6 py-3 rounded-4xl font-semibold cursor-pointer hover:opacity-80 transition-opacity duration-300">
+          <button onClick={() => emailRef.current?.focus()} className="bg-black text-white px-6 py-3 rounded-4xl font-semibold cursor-pointer hover:opacity-80 transition-opacity duration-300 max-md:hidden">
             Join Waitlist
           </button>
         </div>
@@ -142,7 +142,7 @@ export default function Home() {
 
       {/* Main */}
       <main
-        className={`flex flex-col items-center justify-center gap-3 max-w-4xl w-full z-10 ${
+        className={`flex flex-col items-center justify-center gap-3 max-w-4xl w-full z-10 px-6 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
         } transition-all duration-700`}
       >
