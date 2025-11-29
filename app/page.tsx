@@ -342,10 +342,6 @@ export default function Home() {
           <li>
             <a href="/privacy-policy">Privacy Policy</a>
           </li>
-          <li>|</li>
-          <li>
-            <a href="/blog">Blog</a>
-          </li>
         </ul>
       </footer>
     </div>
