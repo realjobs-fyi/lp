@@ -276,7 +276,9 @@ export default function Home() {
         
       </main>
 
-      <div className="flex space-x-2 max-md:flex-col justify-center items-center max-md:gap-8 max-md:w-full">
+      <div className={`flex space-x-2 max-md:flex-col justify-center items-center max-md:gap-8 max-md:w-full ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+      } transition-all duration-700`}>
             <form
               onSubmit={handleSubmit}
               className={`relative flex max-md:flex-col items-center justify-center gap-2 max-md:w-full ${
