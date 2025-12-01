@@ -308,8 +308,7 @@ export default function Home() {
                 <div className=" rounded-4xl pr-4 pl-3 py-1 bg-green-50 border-2 border-green-200 w-fit flex items-center justify-center gap-2">
                   <CheckCircle className="w-4 h-4 text-green-500" />
                   <p className="text-sm font-medium text-green-500 max-md:text-[10px]">
-                    Thank you for joining the waitlist! We&apos;ll be in touch
-                    soon.
+                    Check your email inbox (and spam folder) for a confirmation email.
                   </p>
                 </div>
               </div>
