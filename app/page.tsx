@@ -112,7 +112,7 @@ export default function Home() {
       <div
         onClick={() => setIsOpen(false)}
         className={`absolute inset-0 w-screen h-screen top-0 left-0 bg-black/50 flex items-center justify-center ${
-          isOpen ? "opacity-100 z-50" : "opacity-0 -z-50"
+          isOpen ? "opacity-100 z-999" : "opacity-0 -z-50"
         }`}
       >
         <div
