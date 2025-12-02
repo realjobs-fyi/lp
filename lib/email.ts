@@ -20,7 +20,7 @@ You're officially on the Real Jobs waitlist (and you're early).
 I'm opening a small Beta Tester Squad to help shape Real Jobs before launch. You'll get early access, test new features first, and directly influence the roadmap.
 <br />
 <br />
-Because the AI features (job analysis + tailored resumes) generate real API costs, beta access is $4.99/month. Every dollar goes straight into development, and all expenses will be fully transparent to beta members.
+Because the AI features (job analysis + tailored resumes) generate real API costs, beta access is $3.97/month. Every dollar goes straight into development, and all expenses will be fully transparent to beta members.
 <br />
 <br />
 If you want in, reply <b>YES</b> and I'll send your invite (as soon as I see your reply).
