@@ -4,8 +4,11 @@ import { Loader2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function SuccessPage() {
+  const searchParams = useSearchParams();
+  const extension_id = searchParams.get('extension_id');
   const [countdown, setCountdown] = useState(10);
 
   useEffect(() => {
@@ -18,7 +21,7 @@ export default function SuccessPage() {
   useEffect(() => {
     if (countdown === 0) {
       window.location.href =
-        `chrome-extension://${process.env.NEXT_PUBLIC_EXTENSION_ID}/src/options/index.html#profile`;
+        `chrome-extension://${extension_id}/src/options/index.html#profile`;
     }
   }, [countdown]);
 
@@ -42,7 +45,7 @@ export default function SuccessPage() {
       </div>
       <Link
         className="text-xs text-gray-600 hover:text-black underline transition-colors duration-200 cursor-pointer"
-        href={`chrome-extension://${process.env.NEXT_PUBLIC_EXTENSION_ID}/src/options/index.html#profile`}
+        href={`chrome-extension://${extension_id}/src/options/index.html#profile`}
       >
         Open extension now
       </Link>
