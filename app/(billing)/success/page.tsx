@@ -3,27 +3,37 @@
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function SuccessPage() {
+function SuccessContent() {
   const searchParams = useSearchParams();
   const extension_id = searchParams.get('extension_id');
   const [countdown, setCountdown] = useState(10);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCountdown(countdown - 1);
+      setCountdown((prev) => prev - 1);
     }, 1000);
     return () => clearInterval(interval);
-  }, [countdown]);
+  }, []);
 
   useEffect(() => {
-    if (countdown === 0) {
+    if (countdown === 0 && extension_id) {
       window.location.href =
         `chrome-extension://${extension_id}/src/options/index.html#profile`;
     }
-  }, [countdown]);
+  }, [countdown, extension_id]);
+
+  if (!extension_id) {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen gap-4 max-md:px-8">
+        <p className="text-gray-500 font-medium text-center">
+          Missing extension ID. Please try again.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center justify-center h-screen gap-4 max-md:px-8">
@@ -50,5 +60,18 @@ export default function SuccessPage() {
         Open extension now
       </Link>
     </div>
+  );
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex flex-col items-center justify-center h-screen gap-4 max-md:px-8">
+        <Loader2 className="w-4 h-4 animate-spin" />
+        <p className="text-gray-500 font-medium text-center">Loading...</p>
+      </div>
+    }>
+      <SuccessContent />
+    </Suspense>
   );
 }
