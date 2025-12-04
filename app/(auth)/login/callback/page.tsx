@@ -14,6 +14,15 @@ async function ensureProfileFromSession(user: User) {
   const fullName = meta.full_name ?? meta.name ?? meta["name"] ?? null;
   const avatarUrl = meta.avatar_url ?? meta.picture ?? null;
 
+  if (fullName || avatarUrl) {
+    await supabase.auth.updateUser({
+      data: {
+        full_name: fullName ?? undefined,
+        avatar_url: avatarUrl ?? undefined,
+      },
+    });
+  }
+
   // 1) See if profile already exists
   const { data: existingProfile, error: profileError } = await supabase
     .from("profiles")
