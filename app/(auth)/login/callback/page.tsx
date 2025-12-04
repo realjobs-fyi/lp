@@ -1,26 +1,66 @@
 "use client";
 
-import type { User } from "@supabase/supabase-js";
+import type { Session } from "@supabase/supabase-js";
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { CheckCircle, Loader2, XCircle } from "lucide-react";
 
 /**
- * Ensure the user has a profile (first sign-up logic)
+ * Ensure the user has a profile + hydrated metadata (first sign-up logic)
  */
-async function ensureProfileFromSession(user: User) {
+async function ensureProfileFromSession(session: Session) {
+  const user = session.user;
   const meta = (user.user_metadata ?? {}) as Record<string, any>;
-  const fullName = meta.full_name ?? meta.name ?? meta["name"] ?? null;
-  const avatarUrl = meta.avatar_url ?? meta.picture ?? null;
 
+  let fullName = meta.full_name ?? meta.name ?? meta["name"] ?? null;
+  let avatarUrl = meta.avatar_url ?? meta.picture ?? null;
+
+  // If avatar/name missing, try to fetch from Google using provider_token
+  if ((!fullName || !avatarUrl) && session.provider_token) {
+    try {
+      const res = await fetch(
+        "https://openidconnect.googleapis.com/v1/userinfo",
+        {
+          headers: {
+            Authorization: `Bearer ${session.provider_token}`,
+          },
+        }
+      );
+
+      if (res.ok) {
+        const userinfo = await res.json(); // { name, picture, email, ... }
+
+        if (!fullName && userinfo.name) {
+          fullName = userinfo.name;
+        }
+        if (!avatarUrl && userinfo.picture) {
+          avatarUrl = userinfo.picture;
+        }
+      } else {
+        console.warn(
+          "[real jobs] userinfo request failed",
+          res.status,
+          await res.text()
+        );
+      }
+    } catch (e) {
+      console.warn("[real jobs] userinfo request threw", e);
+    }
+  }
+
+  // Persist metadata into auth.users so Supabase dashboard & API can see it
   if (fullName || avatarUrl) {
-    await supabase.auth.updateUser({
-      data: {
-        full_name: fullName ?? undefined,
-        avatar_url: avatarUrl ?? undefined,
-      },
-    });
+    try {
+      await supabase.auth.updateUser({
+        data: {
+          full_name: fullName ?? undefined,
+          avatar_url: avatarUrl ?? undefined,
+        },
+      });
+    } catch (e) {
+      console.warn("[real jobs] updateUser (metadata) failed", e);
+    }
   }
 
   // 1) See if profile already exists
@@ -35,23 +75,22 @@ async function ensureProfileFromSession(user: User) {
   }
 
   if (existingProfile) {
-    // Already has profile
     return existingProfile;
   }
 
   // 2) Insert initial profile for FIRST sign-up
   const { data: insertedProfile, error: insertError } = await supabase
-  .from("profiles")
-  .insert({
-    user_id: user.id,
-    plan: "FREE",
-  })
-  .select("*")
-  .single();
+    .from("profiles")
+    .insert({
+      user_id: user.id,
+      plan: "FREE",
+    })
+    .select("*")
+    .single();
 
   if (insertError) {
     console.error("[real jobs] profile insert error", insertError);
-    throw insertError; // don't silently swallow this
+    throw insertError;
   }
 
   return insertedProfile;
@@ -77,7 +116,6 @@ function Done() {
       <p className="text-gray-600 font-medium text-center text-lg">
         You&apos;re signed in
       </p>
-
       <p className="text-gray-400 font-medium text-center text-xs">
         You can now close this tab and return to the Real Jobs extension.
       </p>
@@ -94,7 +132,6 @@ function Error() {
       <p className="text-gray-600 font-medium text-center text-lg">
         Error signing in
       </p>
-
       <p className="text-gray-400 font-medium text-center text-xs">
         An error occurred while signing in. Close this tab and try again later.
       </p>
@@ -123,8 +160,8 @@ function LoginCallbackContent() {
 
         const session = data.session;
 
-        // 1) Ensure profile exists (first sign-up logic)
-        await ensureProfileFromSession(session.user);
+        // 1) Ensure profile & metadata exist (first sign-up logic)
+        await ensureProfileFromSession(session);
 
         // 2) If user came from extension, send session back
         if (source === "extension") {
@@ -148,13 +185,11 @@ function LoginCallbackContent() {
     void run();
   }, [source]);
 
-  // Close the window after 10 seconds once done
   useEffect(() => {
     if (status === "done") {
       const timeout = setTimeout(() => {
         window.close();
       }, 10000);
-
       return () => clearTimeout(timeout);
     }
   }, [status]);
