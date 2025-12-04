@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { CheckCircle, Loader2, XCircle } from "lucide-react";
@@ -114,7 +114,7 @@ function Error() {
   );
 }
 
-export default function LoginCallbackPage() {
+function LoginCallbackContent() {
   const searchParams = useSearchParams();
   const source = searchParams.get("source") ?? "web";
   const [status, setStatus] = useState<"loading" | "done" | "error">("loading");
@@ -174,5 +174,17 @@ export default function LoginCallbackPage() {
         </>
       )}
     </main>
+  );
+}
+
+export default function LoginCallbackPage() {
+  return (
+    <Suspense fallback={
+      <main className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
+        <Loading />
+      </main>
+    }>
+      <LoginCallbackContent />
+    </Suspense>
   );
 }

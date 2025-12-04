@@ -1,10 +1,12 @@
 "use client";
 
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import Image from "next/image";
+import { Loader2 } from "lucide-react";
 
-export default function LoginPage() {
+function LoginContent() {
   const searchParams = useSearchParams();
   const source = searchParams.get("source") ?? "web";
 
@@ -59,5 +61,22 @@ export default function LoginPage() {
         </p>
       </div>
     </main>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <main className="min-h-screen flex items-center justify-center">
+        <div className="flex items-center w-full justify-center gap-2 my-6 max-w-sm">
+          <Loader2 className="w-4 h-4 animate-spin" />
+          <p className="text-gray-500 font-medium text-center text-sm">
+            Loading...
+          </p>
+        </div>
+      </main>
+    }>
+      <LoginContent />
+    </Suspense>
   );
 }
