@@ -32,20 +32,17 @@ async function ensureProfileFromSession(user: User) {
 
   // 2) Insert initial profile for FIRST sign-up
   const { data: insertedProfile, error: insertError } = await supabase
-    .from("profiles")
-    .insert({
-      user_id: user.id,
-      email: user.email,
-      name: fullName,
-      avatar_url: avatarUrl,
-      plan: "FREE",
-      subscription_status: "none",
-      subscription_expiration: null,
-      stripe_customer_id: null,
-      stripe_subscription_id: null,
-    })
-    .select("*")
-    .single();
+  .from("profiles")
+  .insert({
+    user_id: user.id,
+    plan: "FREE",
+    subscription_status: "none",
+    subscription_expiration: null,
+    stripe_customer_id: null,
+    stripe_subscription_id: null,
+  })
+  .select("*")
+  .single();
 
   if (insertError) {
     console.error("[real jobs] profile insert error", insertError);
