@@ -36,10 +36,6 @@ async function ensureProfileFromSession(user: User) {
   .insert({
     user_id: user.id,
     plan: "FREE",
-    subscription_status: "none",
-    subscription_expiration: null,
-    stripe_customer_id: null,
-    stripe_subscription_id: null,
   })
   .select("*")
   .single();
