@@ -11,6 +11,7 @@ import {
   XCircle,
 } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
+import ReactPlayer from "react-player";
 
 function SubmitButton({ isSubmitting }: { isSubmitting: boolean }) {
   return (
@@ -117,7 +118,7 @@ export default function Home() {
       >
         <div
           onClick={(e) => e.stopPropagation()}
-          className={`flex flex-col gap-6 bg-white p-8 rounded-4xl h-fit max-md:h-[80%] w-[80%] max-md:w-[90%] ${
+          className={`flex flex-col gap-6 bg-white p-10 rounded-4xl h-fit max-md:h-[80%] max-md:max-h-fit w-fit max-md:w-[90%] ${
             isOpen
               ? "opacity-100 translate-y-0 scale-100"
               : "opacity-0 translate-y-10 scale-95"
@@ -134,8 +135,8 @@ export default function Home() {
               <CircleX />
             </button>
           </div>
-          <div className="flex items-center justify-center h-140 bg-neutral-200 rounded-3xl">
-            <CirclePlay width={36} height={36} />
+          <div className="flex items-center justify-center h-140 max-md:h-fit bg-neutral-200 rounded-3xl">
+            <ReactPlayer className="rounded-md" width="100%" height="100%" controls src="/video/demo.mp4" />
           </div>
         </div>
       </div>
