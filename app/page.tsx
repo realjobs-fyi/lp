@@ -36,6 +36,7 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const [focused, setFocused] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   // reference to the email input field
   const emailRef = useRef<HTMLInputElement>(null);
@@ -96,6 +97,13 @@ export default function Home() {
     }
   };
 
+  // pause video when popup closes
+  useEffect(() => {
+    if (!isOpen) {
+      setIsPlaying(false);
+    }
+  }, [isOpen]);
+
   // close when escape key is pressed
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -136,7 +144,16 @@ export default function Home() {
             </button>
           </div>
           <div className="flex items-center justify-center h-140 max-md:h-fit bg-neutral-200 rounded-3xl">
-            <ReactPlayer className="rounded-md" width="100%" height="100%" controls src="/video/demo.mp4" />
+            <ReactPlayer 
+              className="rounded-md" 
+              width="100%" 
+              height="100%" 
+              controls 
+              src="/video/demo.mp4"
+              playing={isOpen ? isPlaying : false}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+            />
           </div>
         </div>
       </div>
@@ -189,7 +206,10 @@ export default function Home() {
         </div>
         <div className="flex items-center justify-center gap-3">
           <button
-            onClick={() => setIsOpen(true)}
+            onClick={() => {
+              setIsPlaying(false);
+              setIsOpen(true);
+            }}
             className="flex items-center justify-center gap-3 border-2 bg-white border-gray-200 font-semibold px-6 py-3 rounded-4xl cursor-pointer hover:bg-gray-100 transition-colors duration-300"
           >
             <CirclePlay />
