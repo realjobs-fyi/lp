@@ -20,7 +20,10 @@ You're officially on the Real Jobs waitlist (and you're early).
 I'm opening a small Beta Tester Squad to help shape Real Jobs before launch. You'll get early access, test new features first, and directly influence the roadmap.
 <br />
 <br />
-Because the AI features (job analysis + tailored resumes) generate real API costs, beta access is $3.97/month. Every dollar goes straight into development, and all expenses will be fully transparent to beta members.
+The extension itself will be 100% free to test, including all filters and job-cleanup features.
+<br />
+<br />
+Only the AI-powered tools (job analysis + tailored resumes) have a small cost: $3.97/month, just enough to cover API usage and development expenses. All costs will be transparent to the beta group.
 <br />
 <br />
 If you want in, reply <b>YES</b> and I'll send your invite (as soon as I see your reply).
