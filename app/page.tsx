@@ -201,7 +201,7 @@ export default function Home() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
         } transition-all duration-700 delay-300`}
       >
-        <div className="flex gap-3 items-end justify-center">
+        <div className="flex gap-3 items-center justify-center">
           <Image src="/icon.svg" width={32} height={32} alt="Real Jobs Icon" />
         </div>
         <div className="flex items-center justify-center gap-3">
@@ -297,7 +297,7 @@ export default function Home() {
         
       </main>
 
-      <div className={`flex space-x-2 max-md:flex-col justify-center items-center max-md:gap-8 max-md:w-full ${
+      <div className={`flex flex-col space-x-2 max-md:flex-col justify-center items-center max-md:gap-8 max-md:w-full ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
       } transition-all duration-700 relative z-50`}>
             <form
