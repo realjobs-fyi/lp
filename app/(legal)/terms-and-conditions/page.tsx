@@ -24,25 +24,23 @@ export default function TermsAndConditionsPage() {
         <div className="w-full flex flex-col gap-6">
           <p>
             Welcome to <strong>Real Jobs</strong>. These Terms govern your use of
-            our Chrome extension, website, and associated backend services
-            (collectively, the “Service”). By installing or using Real Jobs, you
-            agree to these Terms. If you do not agree, please discontinue use.
+            our Chrome extension and this website (collectively, the “Service”).
+            The extension runs entirely on your device; we do not receive or store
+            your data on our servers. By installing or using Real Jobs, you agree
+            to these Terms. If you do not agree, please discontinue use.
           </p>
 
           {/* 1 */}
           <div className="flex flex-col gap-4">
             <h2 className="font-semibold text-lg">1. Service Description</h2>
             <p>
-              Real Jobs is a browser extension that helps job seekers filter
-              low-quality or misleading job postings and generate tailored PDF
-              résumés using user-provided information and job descriptions.
-              Real Jobs does <strong>not</strong> scrape private data, automate
-              applications on third-party websites, or collect LinkedIn content
-              on behalf of the user.
-            </p>
-            <p>
-              Some features are free; others require an authenticated account
-              and a paid subscription.
+              Real Jobs is an open-source browser extension that runs entirely on
+              your device (client-side). It helps job seekers filter low-quality or
+              misleading job postings and access basic job-search analytics. No job
+              data or usage data from the extension is sent to or stored on our
+              servers. Real Jobs does <strong>not</strong> scrape private data,
+              automate applications on third-party websites, or collect LinkedIn
+              content on behalf of the user.
             </p>
           </div>
 
@@ -59,18 +57,11 @@ export default function TermsAndConditionsPage() {
 
           {/* 3 */}
           <div className="flex flex-col gap-4">
-            <h2 className="font-semibold text-lg">3. Accounts & Subscriptions</h2>
+            <h2 className="font-semibold text-lg">3. Accounts</h2>
             <p>
-              Some features, such as résumé generation, require you to create an
-              account using Google or GitHub authentication. Paid plans are
-              billed through our payment provider. You authorize Real Jobs and
-              the provider to charge your chosen payment method according to the
-              plan you select.
-            </p>
-            <p>
-              Subscription periods, renewals, cancellations, and refunds are
-              managed directly through our payment provider. Free tiers may have
-              monthly usage limits.
+              The extension does not require an account and does not send your
+              data to our servers. This website may offer optional account features
+              in the future; any such use would be subject to these Terms.
             </p>
           </div>
 
@@ -88,8 +79,8 @@ export default function TermsAndConditionsPage() {
                 Real Jobs systems.
               </li>
               <li>
-                Use Real Jobs to generate misleading or fraudulent résumés,
-                profiles, or job applications.
+                Use Real Jobs to create misleading or fraudulent profiles or
+                job applications.
               </li>
               <li>
                 Share or expose API keys, tokens, or authentication credentials.
@@ -105,15 +96,10 @@ export default function TermsAndConditionsPage() {
           <div className="flex flex-col gap-4">
             <h2 className="font-semibold text-lg">5. User Data & Privacy</h2>
             <p>
-              You retain ownership of all information you provide, including
-              job data, résumé content, and personal details. Real Jobs only
-              processes your data temporarily to generate results and does not
-              sell, share, or repurpose it for training external models.
-            </p>
-            <p>
-              By using the extension, you grant Real Jobs a temporary license to
-              process your data strictly for the purpose of fulfilling your
-              requests.
+              You retain ownership of all information you use with the extension.
+              All processing (filtering, analytics) happens on your device; we do
+              not receive, store, or have access to your job data or personal
+              details. Real Jobs does not sell, share, or repurpose your data.
             </p>
           </div>
 
@@ -121,7 +107,7 @@ export default function TermsAndConditionsPage() {
           <div className="flex flex-col gap-4">
             <h2 className="font-semibold text-lg">6. Accuracy of Output</h2>
             <p>
-              Résumé outputs and job-quality insights are generated
+              Job-quality insights and other outputs are generated
               programmatically and may not always be accurate. Real Jobs
               provides all output <strong>&quot;as is&quot;</strong> with no guarantees of
               completeness, correctness, or suitability for specific purposes.
@@ -148,10 +134,11 @@ export default function TermsAndConditionsPage() {
           <div className="flex flex-col gap-4">
             <h2 className="font-semibold text-lg">8. Third-Party Services</h2>
             <p>
-              Real Jobs may interact with third-party platforms such as LinkedIn
-              solely on the client side. We are not affiliated with or endorsed
-              by any job board or employer. Your use of third-party websites is
-              governed by their separate terms and conditions.
+              Real Jobs interacts with third-party platforms such as job boards
+              solely on the client side (in your browser). We do not receive or
+              store data from those interactions. We are not affiliated with or
+              endorsed by any job board or employer. Your use of third-party
+              websites is governed by their separate terms and conditions.
             </p>
           </div>
 
@@ -161,8 +148,7 @@ export default function TermsAndConditionsPage() {
             <p>
               You may stop using Real Jobs at any time. We may suspend or
               terminate your access if you violate these Terms or misuse the
-              Service. Paid users may lose access to premium features when a
-              subscription expires or is canceled.
+              Service.
             </p>
           </div>
 
@@ -179,15 +165,7 @@ export default function TermsAndConditionsPage() {
           {/* 11 */}
           <div className="flex flex-col gap-4">
             <h2 className="font-semibold text-lg">11. Contact</h2>
-            <p>For legal inquiries or requests, contact:</p>
-            <p>
-              <Link
-                href="mailto:hello@realjobs.fyi"
-                className="underline"
-              >
-                <strong>hello@realjobs.fyi</strong>
-              </Link>
-            </p>
+            <p>For legal inquiries or requests, contact us through the extension or this website.</p>
           </div>
         </div>
       </div>

@@ -26,127 +26,63 @@ export default function PrivacyPolicyPage() {
         <div className="w-full flex flex-col gap-6">
           <p>
             At <strong>Real Jobs</strong>, privacy is a core principle. Our mission is to
-            help job seekers identify low-quality or misleading job postings and generate
-            tailored résumés while keeping personal data protected, minimal, and under user control.
+            help job seekers identify low-quality or misleading job postings while keeping
+            personal data protected, minimal, and under user control.
           </p>
 
           {/* 1 */}
           <div className="flex flex-col gap-4">
             <h2 className="font-semibold text-lg">1. Overview</h2>
             <p>
-              Real Jobs is a Chrome extension and associated backend service designed to:
+              Real Jobs is a Chrome extension that runs entirely on your device (client-side). It is designed to:
             </p>
             <ul className="list-disc list-inside ml-4 space-y-2">
               <li>Filter and highlight low-quality or misleading job postings.</li>
               <li>Provide basic job-search analytics.</li>
-              <li>Generate PDF résumés based on user-provided information and selected job descriptions.</li>
             </ul>
             <p>
-              Real Jobs does <strong>not</strong> scrape private data, automate applications on third-party platforms, or store résumé documents after they are generated.
+              All extension logic runs locally in your browser. <strong>No job data, usage data, or personal data from the extension is sent to or stored on our servers.</strong> Real Jobs does not scrape private data or automate applications on third-party platforms.
             </p>
           </div>
 
           {/* 2 */}
           <div className="flex flex-col gap-4">
             <h2 className="font-semibold text-lg">2. Information We Collect</h2>
-            <p>We collect only the minimum data required to operate the service:</p>
-
-            <ul className="list-disc list-inside ml-4 space-y-2">
-              <li>
-                <strong>Account data (if you sign in)</strong> – such as name, email, and profile photo from Google or GitHub OAuth.
-              </li>
-              <li>
-                <strong>Résumé input data</strong> – information you voluntarily provide (experience, projects, skills, etc.) for résumé generation.
-              </li>
-              <li>
-                <strong>Limited job information</strong> – basic job metadata (such as title and company name) provided by the extension for contextual résumé tailoring.
-              </li>
-              <li>
-                <strong>Usage metadata</strong> – timestamps, feature usage, and generation counts for enforcing plan limits and improving reliability.
-              </li>
-            </ul>
-
             <p>
-              We do <strong>not</strong> collect, store, or sell:
+              <strong>Extension:</strong> The Real Jobs extension does not send any of your data to our servers. All processing (filtering, analytics) happens on your device. We do not collect, store, or receive any job data, browsing data, or personal information from the extension.
             </p>
-
-            <ul className="list-disc list-inside ml-4 space-y-2">
-              <li>Full LinkedIn profiles or scraped job board content</li>
-              <li>Saved résumés or generated PDF files</li>
-              <li>Sensitive personal identifiers such as government IDs or financial data</li>
-            </ul>
+            <p>
+              <strong>This website:</strong> If you visit this website, we may collect only what is typical for a static site: privacy-respecting analytics (e.g., anonymized page views) as described in the Cookies & Analytics section. We do not collect, store, or sell personal identifiers, LinkedIn or job board content, or sensitive data.
+            </p>
           </div>
 
           {/* 3 */}
           <div className="flex flex-col gap-4">
             <h2 className="font-semibold text-lg">3. How Your Data Is Used</h2>
-            <p>Your data is used strictly to:</p>
-
-            <ul className="list-disc list-inside ml-4 space-y-2">
-              <li>Generate tailored, ATS-friendly résumés on your request</li>
-              <li>Enforce free and paid plan usage limits</li>
-              <li>Improve service reliability, performance, and user experience</li>
-              <li>Communicate with you about account-related issues (if applicable)</li>
-            </ul>
-
             <p>
-              We never use your information for advertising, profiling, or resale to third parties.
+              Because the extension does not send data to our servers, we do not use any of your extension data. Any website analytics we use are limited to understanding aggregate usage of this site (e.g., page views) and are not used for advertising, profiling, or resale to third parties.
             </p>
           </div>
 
           {/* 4 */}
           <div className="flex flex-col gap-4">
             <h2 className="font-semibold text-lg">4. Data Retention and Storage</h2>
-            <ul className="list-disc list-inside ml-4 space-y-2">
-              <li>
-                Résumé data is processed <strong>in real time</strong> and is <strong>not stored</strong>
-                after the PDF is generated and returned to you.
-              </li>
-              <li>
-                Temporary data may exist in memory during processing and is automatically discarded.
-              </li>
-              <li>
-                Minimal usage logs (non-content, non-sensitive) may be retained for up to 30 days
-                for debugging and billing accuracy.
-              </li>
-              <li>
-                Account information remains stored while your account is active and may be deleted upon request.
-              </li>
-            </ul>
+            <p>
+              We do not store any data from the extension on our servers. Any data the extension uses (e.g., job listings you view) exists only in your browser and is not transmitted to us. For this website, we may retain only minimal, anonymized analytics data as needed for site operation; we do not maintain user accounts or store personal data on our systems.
+            </p>
           </div>
 
           {/* 5 */}
           <div className="flex flex-col gap-4">
-            <h2 className="font-semibold text-lg">5. AI & Model Privacy</h2>
+            <h2 className="font-semibold text-lg">5. Security</h2>
             <p>
-              Real Jobs uses controlled AI processing solely to generate résumé content
-              during your request. Your inputs and outputs are:
-            </p>
-
-            <ul className="list-disc list-inside ml-4 space-y-2">
-              <li>Not stored for future reuse</li>
-              <li>Not used to train third-party or internal AI models</li>
-              <li>Not shared with advertisers or data brokers</li>
-            </ul>
-
-            <p>
-              All processing happens only to fulfill your specific action and is then discarded.
+              The extension runs entirely on your device, so your job and browsing data never leaves your machine to reach our servers. This website is served over <strong>HTTPS/TLS</strong>. We do not operate backend services that receive or store your personal data.
             </p>
           </div>
 
           {/* 6 */}
           <div className="flex flex-col gap-4">
-            <h2 className="font-semibold text-lg">6. Security</h2>
-            <p>
-              All traffic between the Real Jobs extension, website, and backend is secured using
-              <strong> HTTPS/TLS encryption</strong>. Access to infrastructure and internal systems
-              is strictly limited and monitored.
-            </p>
-          </div>
-
-          {/* 7 */}
-          <div className="flex flex-col gap-4">
-            <h2 className="font-semibold text-lg">7. Cookies & Analytics</h2>
+            <h2 className="font-semibold text-lg">6. Cookies & Analytics</h2>
             <p>
               Our website may use privacy-respecting analytics tools (e.g., Plausible or Fathom)
               to understand usage trends without tracking individuals. We do not use advertising
@@ -154,45 +90,27 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
 
+          {/* 7 */}
+          <div className="flex flex-col gap-4">
+            <h2 className="font-semibold text-lg">7. Your Rights</h2>
+            <p>
+              Because we do not collect or store your personal data from the extension, there is no account or stored data to access or delete for extension use. For any privacy-related requests regarding this website, contact us through the extension or this website.
+            </p>
+          </div>
+
           {/* 8 */}
           <div className="flex flex-col gap-4">
-            <h2 className="font-semibold text-lg">8. Your Rights</h2>
-            <p>You may request at any time:</p>
-
-            <ul className="list-disc list-inside ml-4 space-y-2">
-              <li>Deletion of your account</li>
-              <li>Access to the limited data associated with your account</li>
-              <li>Removal from any communications list</li>
-            </ul>
-
+            <h2 className="font-semibold text-lg">8. Updates to This Policy</h2>
             <p>
-              To exercise these rights, contact us at{" "}
-              <Link href="mailto:hello@realjobs.fyi" className="underline">
-                <strong>hello@realjobs.fyi</strong>
-              </Link>
-              .
+              This Privacy Policy may be updated as the service evolves.
+              Any significant changes will be posted on this page.
             </p>
           </div>
 
           {/* 9 */}
           <div className="flex flex-col gap-4">
-            <h2 className="font-semibold text-lg">9. Updates to This Policy</h2>
-            <p>
-              This Privacy Policy may be updated as the service evolves.
-              Any significant changes will be posted on this page and, if necessary,
-              communicated through the extension or your account.
-            </p>
-          </div>
-
-          {/* 10 */}
-          <div className="flex flex-col gap-4">
-            <h2 className="font-semibold text-lg">10. Contact</h2>
-            <p>For any privacy-related questions, contact:</p>
-            <p>
-              <Link href="mailto:hello@realjobs.fyi" className="underline">
-                <strong>hello@realjobs.fyi</strong>
-              </Link>
-            </p>
+            <h2 className="font-semibold text-lg">9. Contact</h2>
+            <p>For any privacy-related questions, contact us through the extension or this website.</p>
           </div>
         </div>
       </div>
