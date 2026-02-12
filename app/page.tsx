@@ -164,7 +164,7 @@ export default function Home() {
               <Link
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://github.com/realjobs-fyi/extension"
+                href="https://chromewebstore.google.com/detail/jhfeijjoobdgkdnfhjahhbjohondljci?utm_source=item-share-cb"
               >
                 <button className="flex items-center justify-center gap-3 pl-4 pr-3 py-1.5 rounded-4xl bg-gray-100 cursor-pointer hover:shadow-lg/5 transition-shadow duration-300">
                   <Hourglass
@@ -223,7 +223,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center mt-6">
             <div className="flex space-x-2 max-md:flex-col justify-center items-center max-md:gap-8">
               <div className="relative flex flex-col items-center justify-center">
-                <Link href="">
+                <Link href="https://chromewebstore.google.com/detail/jhfeijjoobdgkdnfhjahhbjohondljci?utm_source=item-share-cb">
                   <button className="flex items-center justify-center gap-3 bg-[#304fff] border-2 border-[#304fff] text-white font-semibold px-6 py-3 rounded-4xl cursor-pointer hover:opacity-80 transition-opacity duration-300">
                     <Chromium />
                     <span className="max-md:text-sm">
