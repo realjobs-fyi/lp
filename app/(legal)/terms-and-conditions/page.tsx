@@ -174,7 +174,7 @@ export default function TermsAndConditionsPage() {
         <div className="flex flex-col items-start justify-center max-w-xl w-full gap-2">
           <span className="w-full h-px bg-gray-100"></span>
           <p className="text-xs py-2 text-gray-500 font-medium">
-            © 2025 <Link className="underline" href="/">Real Jobs</Link>
+            © {new Date().getFullYear()} <Link className="underline" href="/">Real Jobs</Link>
           </p>
         </div>
       </div>
