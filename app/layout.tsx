@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Real Jobs | Filter Fake Job Listings & Land Interviews Faster",
+  title: "Real Jobs Extension | Filter Fake Job Listings & Land Interviews Faster",
   description:
     "Real Jobs flags fake listings, cuts candidate ghosting by 60%, and delivers 4x more interviews through a curated feed and free Chrome extension.",
   keywords: [
@@ -23,10 +23,14 @@ export const metadata: Metadata = {
     "job search Chrome extension",
     "reduce candidate ghosting",
     "get more interviews",
+    "chrome extension",
+    "job search",
+    "job search chrome extension",
+    "job search chrome extension",
   ],
   metadataBase: new URL("https://realjobs.fyi"),
   openGraph: {
-    title: "Real Jobs | Filter Fake Job Listings & Land Interviews Faster",
+    title: "Real Jobs Extension | Filter Fake Job Listings & Land Interviews Faster",
     description:
       "Real Jobs flags fake listings, cuts candidate ghosting by 60%, and delivers 4x more interviews through a curated feed and free Chrome extension.",
     url: "https://realjobs.fyi",
@@ -37,13 +41,13 @@ export const metadata: Metadata = {
       url: "/og-image.png",
       width: 1200,
       height: 630,
-      alt: "Real Jobs | Filter Fake Job Listings & Land Interviews Faster",
+      alt: "Real Jobs Extension | Filter Fake Job Listings & Land Interviews Faster",
       type: "image/png",
     }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Real Jobs | Filter Fake Job Listings & Land Interviews Faster",
+    title: "Real Jobs Extension | Filter Fake Job Listings & Land Interviews Faster",
     images: ["/og-image.png"],
   },
 };
